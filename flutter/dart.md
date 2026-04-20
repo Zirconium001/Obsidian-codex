@@ -1,42 +1,85 @@
-// VARIABLES: You can store different types of info in variables. They are like containers for data. You can create a variable and give it a name, and then you can use that name to access the data stored in it.
+# Variables & Operators (Dart)
+
+## 🧩 Variables
+
+Variables store data that you can use and modify in your program.
+
+```dart
 String name = "Zirconium";
 int age = 20;
 double pi = 3.14159;
 bool isBeginner = true;
+```
 
-/* OPERATORS: Operators are symbols that perform specific operations on one or more operands (values or variables). They are used to manipulate data and perform calculations. Here are some common types of operators in programming:
+### Types used:
 
-1. BASIC MATH OPERATORS
-1 + 1 = 2; add
-2 - 1 = 1; subtract
-2 * 3 = 6; multiply
-6 / 2 = 3; divide
-5 % 2 = 1; modulus (remainder)
+* `String` → text
+* `int` → whole numbers
+* `double` → decimal numbers
+* `bool` → true/false
 
-2. COMPARISON OPERATORS
-5 == 5; equal to
-5 != 3; not equal to
-5 > 3; greater than
-3 < 5; less than
-5 >= 5; greater than or equal to
-3 <= 5; less than or equal to
+---
 
-3. LOGICAL OPERATORS
-AND operator: returns true if both sides are true (true && true = true, true && false = false)
+## ⚙️ Operators
 
-OR operator: returns true if at least one side is true (true || false = true, false || false = false)
+Operators are used to perform operations on variables and values.
 
-NOT operator: returns the opposite of the value (!true = false, !false = true)
+---
 
-4. ASSIGNMENT OPERATORS
-= : assigns a value to a variable (x = 5)
-+= : adds a value to a variable and assigns the result (x += 3 is the same as x = x + 3)
+### ➕ 1. Basic Math Operators
 
--= : subtracts a value from a variable and assigns the result (x -= 2 is the same as x = x - 2)
+```dart
+1 + 1; // 2  (addition)
+2 - 1; // 1  (subtraction)
+2 * 3; // 6  (multiplication)
+6 / 2; // 3  (division)
+5 % 2; // 1  (remainder)
+```
 
-*= : multiplies a variable by a value and assigns the result (x *= 4 is the same as x = x * 4)
+---
 
-/= : divides a variable by a value and assigns the result (x /= 2 is the same as x = x / 2)
+### 🔍 2. Comparison Operators
 
-*/
+```dart
+5 == 5; // true  (equal to)
+5 != 3; // true  (not equal)
+5 > 3;  // true  (greater than)
+3 < 5;  // true  (less than)
+5 >= 5; // true  (greater or equal)
+3 <= 5; // true  (less or equal)
+```
 
+---
+
+### 🔗 3. Logical Operators
+
+```dart
+true && true;   // true   (AND)
+true || false;  // true   (OR)
+!true;          // false  (NOT)
+```
+
+* `&&` → both conditions must be true
+* `||` → at least one condition must be true
+* `!` → reverses the value
+
+---
+
+### 📝 4. Assignment Operators
+
+```dart
+int x = 5;
+
+x += 3; // 8
+x -= 2; // 6
+x *= 4; // 24
+x /= 2; // 12
+```
+
+* `=` → assign value
+* `+=` → add and assign
+* `-=` → subtract and assign
+* `*=` → multiply and assign
+* `/=` → divide and assign
+
+---
