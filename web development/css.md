@@ -1,100 +1,86 @@
-# 🎨 CSS Complete Reference
+# 🎨 CSS Complete Reference Notes
 
-> A structured, professional reference for CSS — from fundamentals to advanced topics.
+> A structured documentation of CSS — from basics to advanced topics.
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
-| # | Topic |
-|---|-------|
-| 1 | [What is CSS](#-what-is-css) |
-| 2 | [CSS Syntax](#-css-syntax) |
-| 3 | [Selectors](#-selectors) |
-| 4 | [Colors & Units](#-colors--units) |
-| 5 | [Typography](#-typography) |
-| 6 | [Box Model](#-box-model) |
-| 7 | [Layout & Display](#-layout--display) |
-| 8 | [Positioning](#-positioning) |
-| 9 | [Flexbox](#-flexbox) |
-| 10 | [CSS Grid](#-css-grid) |
-| 11 | [Backgrounds](#-backgrounds) |
-| 12 | [Effects & Shadows](#-effects--shadows) |
-| 13 | [Transitions & Animations](#-transitions--animations) |
-| 14 | [Responsive Design](#-responsive-design) |
-| 15 | [Variables & Functions](#-variables--functions) |
-| 16 | [Best Practices](#-best-practices) |
+- [🎯 What is CSS](#-what-is-css)
+- [🧩 CSS Syntax](#-css-syntax)
+- [🎯 Selectors](#-selectors)
+- [🎨 Colors & Units](#-colors--units)
+- [🔤 Typography](#-typography)
+- [📦 Box Model](#-box-model)
+- [📐 Layout & Display](#-layout--display)
+- [📏 Positioning](#-positioning)
+- [🧱 Flexbox](#-flexbox)
+- [🧮 CSS Grid](#-css-grid)
+- [🖼️ Backgrounds](#️-backgrounds)
+- [✨ Effects & Shadows](#-effects--shadows)
+- [🎞️ Transitions & Animations](#️-transitions--animations)
+- [📱 Responsive Design](#-responsive-design)
+- [⚙️ Variables & Functions](#️-variables--functions)
+- [🧠 Best Practices](#-best-practices)
 
 ---
 
 ## 🎯 What is CSS
 
-*CSS (Cascading Style Sheets)* controls the visual presentation of HTML elements.
+CSS (Cascading Style Sheets) controls the **appearance** of HTML elements.
 
-| Layer | Technology | Role |
-|-------|-----------|------|
-| Structure | HTML | Content & markup |
-| Style | CSS | Visual presentation |
-| Behavior | JavaScript | Interactivity |
+| Layer | Role |
+|-------|------|
+| HTML | Structure |
+| CSS | Style |
+| JS | Behavior |
 
 ### Ways to Add CSS
 
-*1. Inline CSS* — Applied directly to an element via the style attribute.
+**1️⃣ Inline CSS**
 
-html
-<p style="color: red;">Hello, World!</p>
+```html
+<p style="color: red;">Hello</p>
+```
 
+**2️⃣ Internal CSS**
 
-> ⚠️ Avoid for anything beyond quick prototyping — it is hard to maintain.
-
----
-
-*2. Internal CSS* — Defined inside a <style> tag within the <head>.
-
-html
+```html
 <style>
-  p {
-    color: red;
-  }
+  p { color: red; }
 </style>
+```
 
+**3️⃣ External CSS** ✅ Best Practice
 
-> ⚠️ Suitable for single-page styles, but not scalable.
-
----
-
-*3. External CSS* ✅ (Recommended)
-
-html
+```html
 <link rel="stylesheet" href="style.css">
-
-
-> ✅ Keeps styles separate, reusable, and maintainable.
+```
 
 ---
 
 ## 🧩 CSS Syntax
 
-css
+```css
 selector {
   property: value;
 }
+```
 
+**Example:**
 
-*Example:*
-
-css
+```css
 h1 {
   color: blue;
   font-size: 30px;
 }
+```
 
-
-| Part | Description |
-|------|-------------|
-| selector | Targets the HTML element(s) to style |
-| property | The style attribute to change |
-| value | The value assigned to that property |
+| Part | Meaning |
+|------|---------|
+| Selector | The HTML element to target |
+| Property | What aspect to change |
+| Value | How to change it |
 
 ---
 
@@ -102,63 +88,59 @@ h1 {
 
 ### Basic Selectors
 
-css
-p       { }   /* Element selector   */
-#title  { }   /* ID selector        */
-.box    { }   /* Class selector     */
-*       { }   /* Universal selector */
+```css
+p { }          /* Element selector */
+#title { }     /* ID selector */
+.box { }       /* Class selector */
+* { }          /* Universal selector */
+```
 
+### Group Selector
 
-### Grouping Selector
+Applies the same styles to multiple elements.
 
-css
+```css
 h1, h2, h3 {
   color: blue;
 }
+```
 
+### Descendant & Child Selectors
 
-### Combinator Selectors
-
-css
-/* Descendant — any <p> inside a <div> */
-div p { color: red; }
-
-/* Child — direct <p> children of <div> only */
-div > p { color: green; }
-
-/* Adjacent sibling */
-h1 + p { color: gray; }
-
-/* General sibling */
-h1 ~ p { color: lightgray; }
-
+```css
+div p { color: red; }      /* Any <p> inside a <div> */
+div > p { color: green; }  /* Direct <p> child of <div> only */
+```
 
 ### Attribute Selector
 
-css
+```css
 input[type="text"] {
   border: 1px solid black;
 }
-
+```
 
 ### Pseudo-Classes
 
-css
-a:hover         { color: red; }
-button:active   { transform: scale(0.9); }
-li:first-child  { color: blue; }
-li:last-child   { color: green; }
-li:nth-child(2) { color: orange; }
+Target elements based on their state or position.
 
+```css
+a:hover { color: red; }              /* On mouse hover */
+button:active { transform: scale(.9); }  /* While being clicked */
+li:first-child { color: blue; }      /* First list item */
+li:last-child { color: gray; }       /* Last list item */
+li:nth-child(2) { color: orange; }   /* Specific child by index */
+```
 
 ### Pseudo-Elements
 
-css
-p::first-letter { font-size: 30px; }
-p::first-line   { font-weight: bold; }
-p::before       { content: "★ "; }
-p::after        { content: " ✓"; }
+Target specific parts of an element.
 
+```css
+p::first-letter { font-size: 30px; }    /* First letter of paragraph */
+p::before { content: "★ "; }           /* Insert content before */
+p::after  { content: " ✔"; }           /* Insert content after */
+```
 
 ---
 
@@ -166,304 +148,316 @@ p::after        { content: " ✓"; }
 
 ### Color Formats
 
-css
-color: red;                   /* Named color     */
-color: #ff0000;               /* Hex             */
-color: rgb(255, 0, 0);        /* RGB             */
-color: rgba(255, 0, 0, 0.5);  /* RGB + Alpha     */
-color: hsl(0, 100%, 50%);     /* HSL             */
-color: hsla(0, 100%, 50%, .5);/* HSL + Alpha     */
-
+```css
+color: red;                  /* Named color */
+color: #ff0000;              /* Hex */
+color: rgb(255, 0, 0);       /* RGB */
+color: rgba(255, 0, 0, 0.5); /* RGB with opacity */
+color: hsl(0, 100%, 50%);    /* HSL */
+```
 
 ### Units
 
 | Type | Examples | Use Case |
 |------|----------|----------|
-| Absolute | px, cm, mm | Fixed-size elements |
-| Relative | %, em, rem | Scalable, accessible sizing |
-| Viewport | vw, vh, vmin, vmax | Full-screen layouts |
+| Absolute | `px`, `cm` | Fixed sizes |
+| Relative | `%`, `em`, `rem` | Scalable sizes |
+| Viewport | `vw`, `vh` | Screen-relative sizes |
 
-css
-font-size: 1.125rem;   /* Relative to root font size     */
-width: 50%;            /* Relative to parent container   */
-height: 100vh;         /* Full viewport height           */
-padding: 2em;          /* Relative to element font size  */
-
-
-> ✅ *Tip:* Prefer rem for font sizes and % or vw/vh for layout dimensions to ensure responsiveness.
+```css
+font-size: 2rem;    /* Relative to root font size */
+width: 50%;         /* Relative to parent width */
+height: 100vh;      /* Full viewport height */
+padding: 1em;       /* Relative to element's font size */
+```
 
 ---
 
 ## 🔤 Typography
 
-css
-font-family: "Georgia", serif;
+```css
+font-family: Arial, sans-serif;
 font-size: 18px;
-font-weight: 700;          /* bold */
+font-weight: bold;       /* or 100–900 */
 font-style: italic;
 line-height: 1.6;
-text-align: center;
+text-align: center;      /* left | right | center | justify */
 text-decoration: underline;
 text-transform: uppercase;
-letter-spacing: 0.05em;
-word-spacing: 4px;
+letter-spacing: 2px;
+word-spacing: 5px;
+```
 
+### 🌐 Google Web Fonts
 
-### Google Fonts Integration
+**Step 1 — Add to HTML `<head>`:**
 
-html
-<!-- In <head> -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+```html
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+```
 
+**Step 2 — Use in CSS:**
 
-css
+```css
 body {
   font-family: "Poppins", sans-serif;
 }
-
+```
 
 ---
 
 ## 📦 Box Model
 
-Every HTML element is rendered as a rectangular box composed of four layers:
+Every HTML element is treated as a rectangular box.
 
+```
+┌──────────────────────────┐
+│         Margin           │
+│  ┌────────────────────┐  │
+│  │      Border        │  │
+│  │  ┌──────────────┐  │  │
+│  │  │   Padding    │  │  │
+│  │  │  ┌────────┐  │  │  │
+│  │  │  │Content │  │  │  │
+│  │  │  └────────┘  │  │  │
+│  │  └──────────────┘  │  │
+│  └────────────────────┘  │
+└──────────────────────────┘
+```
 
-┌─────────────────────────────────┐
-│            MARGIN               │
-│  ┌───────────────────────────┐  │
-│  │         BORDER            │  │
-│  │  ┌─────────────────────┐  │  │
-│  │  │       PADDING       │  │  │
-│  │  │  ┌───────────────┐  │  │  │
-│  │  │  │    CONTENT    │  │  │  │
-│  │  │  └───────────────┘  │  │  │
-│  │  └─────────────────────┘  │  │
-│  └───────────────────────────┘  │
-└─────────────────────────────────┘
-
-
-css
+```css
 div {
   width: 200px;
   padding: 20px;
   border: 5px solid black;
   margin: 10px;
 }
-
+```
 
 ### Box Sizing
 
-By default, width does not include padding or border. Use border-box to include them:
+> ✅ Always include this in your CSS reset — it makes sizing more predictable.
 
-css
-/* Apply globally — recommended */
-*,
-*::before,
-*::after {
+```css
+* {
   box-sizing: border-box;
 }
-
+```
 
 | Value | Behavior |
 |-------|----------|
-| content-box | Default. width = content only |
-| border-box | width includes padding + border |
+| `content-box` (default) | Width applies to content only |
+| `border-box` | Width includes padding and border |
 
 ---
 
 ## 📐 Layout & Display
 
-css
-display: block;        /* Stacks vertically, full width         */
-display: inline;       /* Flows with text, no width/height      */
-display: inline-block; /* Inline flow with block sizing support */
-display: flex;         /* Flexbox container                     */
-display: grid;         /* Grid container                        */
-display: none;         /* Removes element from layout           */
-
+```css
+display: block;         /* Full width, starts on new line */
+display: inline;        /* Only takes needed width, no height/width control */
+display: inline-block;  /* Inline but accepts width/height */
+display: none;          /* Removes element from layout entirely */
+```
 
 ### Visibility vs Display
 
-css
-visibility: hidden;  /* Element is invisible but still occupies space */
-display: none;       /* Element is removed entirely from the layout   */
-
+```css
+visibility: hidden;  /* Element is invisible but still takes up space */
+display: none;       /* Element is removed and takes up no space */
+```
 
 ---
 
 ## 📏 Positioning
 
-css
-position: static;    /* Default — normal document flow            */
-position: relative;  /* Offset from its normal position           */
-position: absolute;  /* Positioned relative to nearest positioned ancestor */
-position: fixed;     /* Fixed relative to the viewport            */
-position: sticky;    /* Sticks at a scroll threshold              */
+```css
+position: static;    /* Default — normal document flow */
+position: relative;  /* Offset from its normal position */
+position: absolute;  /* Positioned relative to nearest positioned parent */
+position: fixed;     /* Fixed to the viewport (stays on scroll) */
+position: sticky;    /* Sticks when scrolled to a threshold */
+```
 
+### Offset Properties
 
-css
+Used with `relative`, `absolute`, `fixed`, and `sticky`.
+
+```css
 .box {
   position: absolute;
   top: 20px;
+  left: 50px;
   right: 0;
   bottom: 0;
-  left: 50px;
 }
-
+```
 
 ### Z-Index (Stacking Order)
 
-css
-.modal {
+```css
+.overlay {
   position: absolute;
-  z-index: 100;
+  z-index: 10;   /* Higher value = appears on top */
 }
+```
 
-
-> ✅ z-index only works on elements with a position value other than static.
+> ⚠️ `z-index` only works on elements with a `position` value other than `static`.
 
 ---
 
 ## 🧱 Flexbox
 
-Flexbox is a *one-dimensional* layout system for arranging items in a row or column.
+One-dimensional layout system — arranges items in a **row or column**.
 
-css
+```css
 .container {
   display: flex;
 }
+```
 
+### Main Container Properties
 
-### Container Properties
+```css
+flex-direction: row;            /* row | column | row-reverse | column-reverse */
+justify-content: center;        /* Main axis alignment */
+align-items: center;            /* Cross axis alignment */
+flex-wrap: wrap;                /* Allow items to wrap to next line */
+gap: 20px;                      /* Space between items */
+```
 
-css
-.container {
-  flex-direction: row;           /* row | column | row-reverse | column-reverse */
-  justify-content: center;       /* Alignment along main axis   */
-  align-items: center;           /* Alignment along cross axis  */
-  flex-wrap: wrap;               /* Allow items to wrap         */
-  gap: 20px;                     /* Space between items         */
-}
+### `justify-content` Values
 
+```css
+justify-content: flex-start;    /* Default — pack to start */
+justify-content: flex-end;      /* Pack to end */
+justify-content: center;        /* Center items */
+justify-content: space-between; /* Equal space between items */
+justify-content: space-around;  /* Equal space around items */
+```
 
-### Item Properties
+### Flex Item Properties
 
-css
+```css
 .item {
-  flex: 1;            /* Grow to fill available space      */
-  flex-shrink: 0;     /* Prevent item from shrinking       */
-  align-self: center; /* Override container's align-items  */
-  order: 2;           /* Change visual order               */
+  flex: 1;          /* Grow to fill available space */
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 200px;
+  align-self: flex-end;  /* Override align-items for this item */
 }
+```
 
+### ✅ Perfect Centering Example
 
-### Perfect Centering
-
-css
+```css
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
-
+```
 
 ---
 
 ## 🧮 CSS Grid
 
-CSS Grid is a *two-dimensional* layout system for rows and columns.
+Two-dimensional layout system — controls both **rows and columns**.
 
-css
+```css
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;  /* 3 equal columns */
   grid-template-rows: auto;
   gap: 20px;
 }
+```
 
+### Column Sizing
 
-### Useful Shorthands
+```css
+grid-template-columns: 200px 1fr 2fr;       /* Mixed sizes */
+grid-template-columns: repeat(3, 1fr);       /* Shorthand for equal columns */
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive */
+```
 
-css
-/* Repeat 3 equal columns */
-grid-template-columns: repeat(3, 1fr);
+### Grid Item Placement
 
-/* Auto-fill responsive columns */
-grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-
-
-### Item Placement
-
-css
+```css
 .item {
-  grid-column: span 2;    /* Span across 2 columns */
-  grid-row: span 1;       /* Span across 1 row     */
-  grid-column: 1 / 3;     /* From line 1 to line 3 */
+  grid-column: span 2;      /* Span across 2 columns */
+  grid-row: span 2;         /* Span across 2 rows */
+  grid-column: 1 / 3;       /* From line 1 to line 3 */
 }
-
-
-> ✅ *Rule of thumb:* Use *Flexbox* for components (navbars, cards) and *Grid* for page-level layouts.
+```
 
 ---
 
 ## 🖼️ Backgrounds
 
-css
+```css
 background-color: #eeeeee;
 background-image: url("bg.jpg");
-background-size: cover;        /* cover | contain | auto */
-background-position: center;
-background-repeat: no-repeat;
-background-attachment: fixed;  /* Parallax effect        */
-
+background-size: cover;       /* cover | contain | auto | px */
+background-position: center;  /* center | top | bottom | left | right */
+background-repeat: no-repeat; /* no-repeat | repeat | repeat-x | repeat-y */
+background-attachment: fixed; /* Parallax-like effect */
+```
 
 ### Shorthand
 
-css
+```css
 background: #eee url("bg.jpg") no-repeat center / cover;
-
+```
 
 ### Gradients
 
-css
+```css
 /* Linear gradient */
-background: linear-gradient(to right, #ff0000, #0000ff);
+background: linear-gradient(to right, red, blue);
+background: linear-gradient(135deg, #667eea, #764ba2);
 
 /* Radial gradient */
-background: radial-gradient(circle, #ff0000, #0000ff);
-
-/* Multi-stop gradient */
-background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-
+background: radial-gradient(circle, red, blue);
+```
 
 ---
 
 ## ✨ Effects & Shadows
 
-css
-/* Box shadow */
+### Box Shadow
+
+```css
 box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 
 /* Multiple shadows */
-box-shadow: 0 2px 4px rgba(0,0,0,.1), 0 8px 16px rgba(0,0,0,.15);
+box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 8px 20px rgba(0,0,0,0.15);
+```
 
-/* Text shadow */
-text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+### Text Shadow
 
-/* Rounded corners */
-border-radius: 10px;
-border-radius: 50%;    /* Circle */
+```css
+text-shadow: 2px 2px 5px gray;
+```
 
-/* Transparency */
+### Border Radius
+
+```css
+border-radius: 10px;     /* All corners */
+border-radius: 50%;      /* Circle / pill shape */
+border-radius: 10px 0;   /* Top-left/bottom-right, top-right/bottom-left */
+```
+
+### Opacity & Filter
+
+```css
 opacity: 0.8;
 
-/* CSS filter effects */
 filter: blur(4px);
+filter: brightness(1.2);
 filter: grayscale(100%);
-filter: drop-shadow(0 4px 6px rgba(0,0,0,.1));
-
+```
 
 ---
 
@@ -471,61 +465,61 @@ filter: drop-shadow(0 4px 6px rgba(0,0,0,.1));
 
 ### Transitions
 
-Smoothly animate a property change between two states.
+Smoothly animate a property change between states.
 
-css
+```css
 button {
   background: blue;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition: background 0.3s ease;
 }
 
 button:hover {
   background: red;
-  transform: translateY(-2px);
 }
+```
 
+```css
+/* Transition multiple properties */
+transition: background 0.3s ease, transform 0.2s ease;
 
-| Property | Description |
-|----------|-------------|
-| transition-property | Which property to animate |
-| transition-duration | How long the transition takes |
-| transition-timing-function | Easing (ease, linear, ease-in-out) |
-| transition-delay | Delay before the transition begins |
+/* Transition all properties */
+transition: all 0.3s ease;
+```
 
-### Animations
+### Animations with `@keyframes`
 
-Define multi-step animations with @keyframes.
-
-css
-@keyframes slideIn {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+```css
+@keyframes slide {
+  from { transform: translateX(0); }
+  to   { transform: translateX(200px); }
 }
 
 .box {
-  animation: slideIn 0.5s ease forwards;
+  animation: slide 2s ease-in-out infinite;
 }
+```
 
+### Multi-Step Keyframes
+
+```css
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-30px); }
+  100% { transform: translateY(0); }
+}
+```
 
 ### Animation Properties
 
-css
-.box {
-  animation-name: slideIn;
-  animation-duration: 2s;
-  animation-timing-function: ease-in-out;
-  animation-delay: 0.5s;
-  animation-iteration-count: infinite;  /* or a number */
-  animation-direction: alternate;
-  animation-fill-mode: forwards;
-}
-
+```css
+animation-name: slide;
+animation-duration: 2s;
+animation-timing-function: ease-in-out;
+animation-delay: 0.5s;
+animation-iteration-count: infinite;  /* or a number */
+animation-direction: alternate;
+animation-fill-mode: forwards;
+```
 
 ---
 
@@ -533,151 +527,110 @@ css
 
 ### Media Queries
 
-Apply styles based on screen size or device characteristics.
+Apply styles based on screen size or device.
 
-css
-/* Tablet and below */
+```css
 @media (max-width: 768px) {
-  body {
-    font-size: 14px;
-  }
+  body { background: red; }
 }
 
-/* Mobile only */
-@media (max-width: 480px) {
-  .container {
-    flex-direction: column;
-  }
+@media (min-width: 768px) and (max-width: 1200px) {
+  .container { width: 90%; }
 }
-
-/* Landscape orientation */
-@media (orientation: landscape) {
-  .hero {
-    height: 50vh;
-  }
-}
-
+```
 
 ### Common Breakpoints
 
-| Name | Width |
-|------|-------|
-| Mobile | < 480px |
-| Tablet | < 768px |
-| Laptop | < 1024px |
-| Desktop | < 1280px |
-| Wide | ≥ 1280px |
+| Breakpoint | Screen Size |
+|------------|-------------|
+| `480px` | Mobile (small) |
+| `768px` | Tablet |
+| `1024px` | Laptop |
+| `1200px` | Desktop |
 
-### Mobile-First Approach ✅ (Recommended)
+### 📱 Mobile-First Approach ✅ Recommended
 
-Start with styles for small screens, then scale up:
+Start with styles for small screens, then scale up.
 
-css
-/* Base — mobile */
-.container {
-  width: 100%;
-  padding: 1rem;
-}
+```css
+/* Base: mobile styles */
+.container { width: 100%; }
 
-/* Tablet and above */
+/* Tablet and up */
 @media (min-width: 768px) {
-  .container {
-    width: 80%;
-    padding: 2rem;
-  }
+  .container { width: 80%; }
 }
 
-/* Desktop and above */
-@media (min-width: 1024px) {
-  .container {
-    width: 70%;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+/* Desktop and up */
+@media (min-width: 1200px) {
+  .container { width: 70%; }
 }
-
+```
 
 ---
 
 ## ⚙️ Variables & Functions
 
-### CSS Custom Properties (Variables)
+### CSS Variables (Custom Properties)
 
-Define reusable values scoped to :root for global access.
+Defined in `:root` to be available globally.
 
-css
+```css
 :root {
-  --color-primary: #3b82f6;
-  --color-secondary: #10b981;
-  --font-size-base: 1rem;
-  --spacing-lg: 2rem;
-  --border-radius: 8px;
+  --main-color: #3498db;
+  --font-size-base: 16px;
+  --spacing-md: 20px;
 }
 
 h1 {
-  color: var(--color-primary);
-  font-size: calc(var(--font-size-base) * 2);
+  color: var(--main-color);
 }
 
-.card {
-  border-radius: var(--border-radius);
-  padding: var(--spacing-lg);
+p {
+  font-size: var(--font-size-base);
+  margin: var(--spacing-md);
 }
-
+```
 
 ### Useful CSS Functions
 
-css
-/* Arithmetic */
-width: calc(100% - 60px);
+```css
+/* calc() — math with mixed units */
+width: calc(100% - 50px);
+height: calc(100vh - 60px);
 
-/* Responsive font sizing — min, preferred, max */
-font-size: clamp(1rem, 2.5vw, 1.5rem);
+/* clamp() — fluid sizing with min/max bounds */
+font-size: clamp(16px, 2vw, 24px);
+/* min value, preferred value, max value */
 
-/* Minimum of two values */
-width: min(90%, 600px);
-
-/* Maximum of two values */
+/* min() and max() */
+width: min(500px, 100%);
 width: max(300px, 50%);
-
+```
 
 ---
 
 ## 🧠 Best Practices
 
-### ✅ Do
+### ✅ Do This
 
-- Use *external stylesheets* to separate concerns
-- Prefer *classes* over IDs for styling (IDs have higher specificity and are harder to override)
-- Use *box-sizing: border-box* globally
-- Use *Flexbox and Grid* for layout instead of floats or absolute positioning
-- Follow a *mobile-first* responsive strategy
-- Use *CSS variables* for colors, spacing, and typography to ensure consistency
-- Keep selectors *shallow and specific* — avoid over-nesting
-- Group and *comment sections* in large stylesheets
+- Use **external CSS files** to keep styles separate from HTML
+- Use **classes** over IDs for styling (IDs have high specificity)
+- Use **Flexbox or Grid** for layout instead of floats or tables
+- Follow a **mobile-first** approach for responsive design
+- Use **CSS variables** for colors, spacing, and font sizes
+- Use **`box-sizing: border-box`** globally
+- Keep selectors **short and specific**
+- **Group related styles** together and add comments for sections
 
-### ❌ Avoid
+### ❌ Avoid This
 
-| Anti-Pattern | Why |
-|---|---|
-| Inline style attributes | Not reusable, hard to maintain |
-| Overusing !important | Breaks the cascade, causes debugging nightmares |
-| Fixed widths on layout elements | Breaks on different screen sizes |
-| Too-deep selector nesting | Increases specificity and reduces reusability |
-| Styling with IDs | High specificity makes overriding difficult |
-| Magic numbers without comments | Code becomes unreadable over time |
+- Inline CSS (hard to maintain and override)
+- Overusing `!important` (breaks the cascade)
+- Fixed widths everywhere (breaks responsiveness)
+- Deeply nested selectors (slow and hard to read)
+- Using only IDs for styling (too high specificity)
 
 ---
 
-## 📚 Further Reading
-
-- [MDN Web Docs — CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
-- [CSS Tricks — A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-- [CSS Tricks — A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
-- [Can I Use](https://caniuse.com/) — Browser compatibility tables
-
----
-
-<div align="center">
-  <sub>Part of the Web Development Reference Series · HTML · <strong>CSS</strong> · JavaScript</sub>
-</div>
+> ✨ **End of CSS Notes** — You now have a complete HTML + CSS reference!
