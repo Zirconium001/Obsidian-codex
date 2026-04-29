@@ -610,27 +610,6 @@ width: max(300px, 50%);
 
 ---
 
-## 🧠 Best Practices
 
-### ✅ Do This
-
-- Use **external CSS files** to keep styles separate from HTML
-- Use **classes** over IDs for styling (IDs have high specificity)
-- Use **Flexbox or Grid** for layout instead of floats or tables
-- Follow a **mobile-first** approach for responsive design
-- Use **CSS variables** for colors, spacing, and font sizes
-- Use **`box-sizing: border-box`** globally
-- Keep selectors **short and specific**
-- **Group related styles** together and add comments for sections
-
-### ❌ Avoid This
-
-- Inline CSS (hard to maintain and override)
-- Overusing `!important` (breaks the cascade)
-- Fixed widths everywhere (breaks responsiveness)
-- Deeply nested selectors (slow and hard to read)
-- Using only IDs for styling (too high specificity)
-
----
 
 > ✨ **End of CSS Notes** — You now have a complete HTML + CSS reference!
