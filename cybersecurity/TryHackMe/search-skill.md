@@ -1,7 +1,4 @@
-# 
-
-
-
+# Search Skill 
 ---
 
 ## Table of Contents
