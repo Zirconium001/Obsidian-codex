@@ -9,43 +9,44 @@
 1. [What is SQL?](#-what-is-sql)
 2. [What Can SQL Do?](#-what-can-sql-do)
 3. [RDBMS](#-rdbms)
-4. [Important SQL Commands](#-important-sql-commands)
-5. [SELECT](#-select)
-6. [SELECT DISTINCT](#-select-distinct)
-7. [WHERE](#-where)
-8. [Operators (overview)](#-operators)
-9. [ORDER BY](#-order-by)
-10. [AND / OR](#-and--or)
-11. [NOT](#-not)
-12. [INSERT INTO](#-insert-into)
-13. [NULL Values](#-null-values)
-14. [UPDATE](#-update)
-15. [DELETE & DROP](#-delete--drop)
-16. [SELECT TOP / LIMIT](#-select-top--limit)
-17. [Aggregate Functions](#-aggregate-functions)
-18. [MIN()](#-min)
-19. [MAX()](#-max)
-20. [COUNT()](#-count)
-21. [SUM()](#-sum)
-22. [AVG()](#-avg)
-23. [LIKE](#-like)
-24. [Wildcards](#-wildcards)
-25. [IN](#-in)
-26. [BETWEEN](#-between)
-27. [Aliases](#-aliases)
-28. [UNION](#-union)
-29. [GROUP BY](#-group-by)
-30. [HAVING](#-having)
-31. [EXISTS](#-exists)
-32. [ANY and ALL](#-any-and-all)
-33. [SELECT INTO](#-select-into)
-34. [INSERT INTO SELECT](#-insert-into-select)
-35. [CASE](#-case)
-36. [NULL Functions](#-null-functions)
-37. [Stored Procedures](#-stored-procedures)
-38. [Comments](#-comments)
-39. [SQL Operators (in depth)](#-sql-operators-in-depth)
-40. [Quick Cheat Sheet](#-quick-cheat-sheet)
+4. [Categories of SQL Commands](#-categories-of-sql-commands)
+5. [Important SQL Commands](#-important-sql-commands)
+6. [SELECT](#-select)
+7. [SELECT DISTINCT](#-select-distinct)
+8. [WHERE](#-where)
+9. [Operators (overview)](#-operators)
+10. [ORDER BY](#-order-by)
+11. [AND / OR](#-and--or)
+12. [NOT](#-not)
+13. [INSERT INTO](#-insert-into)
+14. [NULL Values](#-null-values)
+15. [UPDATE](#-update)
+16. [DELETE & DROP](#-delete--drop)
+17. [SELECT TOP / LIMIT](#-select-top--limit)
+18. [Aggregate Functions](#-aggregate-functions)
+19. [MIN()](#-min)
+20. [MAX()](#-max)
+21. [COUNT()](#-count)
+22. [SUM()](#-sum)
+23. [AVG()](#-avg)
+24. [LIKE](#-like)
+25. [Wildcards](#-wildcards)
+26. [IN](#-in)
+27. [BETWEEN](#-between)
+28. [Aliases](#-aliases)
+29. [UNION](#-union)
+30. [GROUP BY](#-group-by)
+31. [HAVING](#-having)
+32. [EXISTS](#-exists)
+33. [ANY and ALL](#-any-and-all)
+34. [SELECT INTO](#-select-into)
+35. [INSERT INTO SELECT](#-insert-into-select)
+36. [CASE](#-case)
+37. [NULL Functions](#-null-functions)
+38. [Stored Procedures](#-stored-procedures)
+39. [Comments](#-comments)
+40. [SQL Operators (in depth)](#-sql-operators-in-depth)
+41. [Quick Cheat Sheet](#-quick-cheat-sheet)
 
 > 📝 *Joins are intentionally skipped in these notes.*
 
@@ -86,6 +87,23 @@
 - 🧱 It is the **basis for SQL** and all modern database systems.
 - 🏷️ Examples: **MS SQL Server, IBM DB2, Oracle, MySQL, Microsoft Access**
 - 📊 Data lives in **tables**, collections of related data made of **columns** and **rows**.
+
+---
+
+## 🧭 Categories of SQL Commands
+
+SQL commands are grouped into **four categories** based on what they do.
+
+| 🏷️ Category | 📖 Full Name | 💬 What it does | ⌨️ Commands |
+|:-----------:|--------------|-----------------|-------------|
+| **DDL** | **D**ata **D**efinition **L**anguage | Defines and changes the **structure** of the database, such as its tables, indexes, and other objects. It deals with the *shape* of the data, not the data itself. | `CREATE` · `ALTER` · `DROP` · `TRUNCATE` |
+| **DML** | **D**ata **M**anipulation **L**anguage | Works with the **data inside** the tables. Use it to read, add, change, and remove records. | `INSERT` · `SELECT` · `UPDATE` · `DELETE` |
+| **DCL** | **D**ata **C**ontrol **L**anguage | Controls **access and permissions**. It decides who is allowed to do what in the database. | `GRANT` · `REVOKE` |
+| **TCL** | **T**ransaction **C**ontrol **L**anguage | Manages **transactions**, which are groups of DML changes. It lets you save them permanently or undo them. | `COMMIT` · `ROLLBACK` · `SAVEPOINT` |
+
+> 💡 **Tip:** an easy way to remember them: **DDL** = *build* the structure, **DML** = *use* the data, **DCL** = *permit* access, **TCL** = *confirm or undo* changes.
+
+> 📝 **Note:** some sources put `SELECT` in its own category, **DQL** (Data Query Language), since it only reads data and never changes it.
 
 ---
 
