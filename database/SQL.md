@@ -402,8 +402,9 @@ SELECT TOP 50 PERCENT * FROM Customers;
 **Combine with WHERE** and **ORDER BY**:
 
 ```sql
-SELECT TOP 3 * FROM Customers
-WHERE Country = 'Germany';
+SELECT  * FROM `student` 
+WHERE `city` = "Dhaka"
+LIMIT 3;
 
 SELECT * FROM Customers
 ORDER BY gpa DESC
