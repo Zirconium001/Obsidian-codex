@@ -405,8 +405,9 @@ SELECT TOP 50 PERCENT * FROM Customers;
 SELECT TOP 3 * FROM Customers
 WHERE Country = 'Germany';
 
-SELECT TOP 3 * FROM Customers
-ORDER BY CustomerName DESC;
+SELECT * FROM Customers
+ORDER BY gpa DESC
+LIMIT 3;
 ```
 
 > 💡 **Tip:** use `ORDER BY` with it, otherwise "the first 3 rows" has no guaranteed meaning.
